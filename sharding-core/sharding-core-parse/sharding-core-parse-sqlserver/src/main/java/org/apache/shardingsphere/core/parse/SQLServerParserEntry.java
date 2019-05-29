@@ -18,8 +18,8 @@
 package org.apache.shardingsphere.core.parse;
 
 import org.antlr.v4.runtime.Lexer;
+import org.apache.shardingsphere.core.parse.antlr.autogen.SQLServerStatementLexer;
 import org.apache.shardingsphere.core.parse.api.SQLParser;
-import org.apache.shardingsphere.core.parse.autogen.SQLServerStatementLexer;
 import org.apache.shardingsphere.core.parse.spi.SQLParserEntry;
 
 /**

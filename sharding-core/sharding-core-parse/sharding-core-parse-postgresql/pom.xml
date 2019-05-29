@@ -37,6 +37,11 @@
             <artifactId>sharding-core-parse-common</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>sharding-core-parse-postgresql</artifactId>
+            <version>4.0.0-RC1</version>
+        </dependency>
     </dependencies>
     
     <build>
