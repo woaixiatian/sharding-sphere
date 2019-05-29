@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Licensed to the Apache Software Foundation (ASF) under one or more
+  ~ contributor license agreements.  See the NOTICE file distributed with
+  ~ this work for additional information regarding copyright ownership.
+  ~ The ASF licenses this file to You under the Apache License, Version 2.0
+  ~ (the "License"); you may not use this file except in compliance with
+  ~ the License.  You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
 <sql-cases db-types="Oracle" namespace="oracle.ddl.alter">
     <sql-case id="alter_table" value="ALTER TABLE t_order PARALLEL" />
     <sql-case id="alter_table_with_space" value="    ALTER TABLE
@@ -21,17 +38,17 @@
     <sql-case id="alter_table_add_constraints" value="ALTER TABLE t_order_item ADD PRIMARY KEY (order_id) UNIQUE (order_id) CHECK (order_id > 0) FOREIGN KEY (order_id) REFERENCES t_order (order_id) ON DELETE CASCADE CHECK (order_id > 0)" />
     <sql-case id="alter_table_drop_primary_key" value="ALTER TABLE t_order DROP PRIMARY KEY" />
     <sql-case id="alter_table_drop_unique_key" value="ALTER TABLE t_order DROP UNIQUE (order_id)" />
-    <sql-case id="alter_table_drop_constraint" value="ALTER TABLE t_order DROP CONSTRAINT idx_order_id" />
-    <sql-case id="alter_table_drop_constraints" value="ALTER TABLE t_order DROP PRIMARY KEY DROP UNIQUE (order_id) DROP CONSTRAINT idx_order_id" />
-    <sql-case id="alter_table_rename_constraint" value="ALTER TABLE t_order RENAME CONSTRAINT idx_order_id_bak TO idx_order_id" />
+    <sql-case id="alter_table_drop_constraint" value="ALTER TABLE t_order DROP CONSTRAINT order_index" />
+    <sql-case id="alter_table_drop_constraints" value="ALTER TABLE t_order DROP PRIMARY KEY DROP UNIQUE (order_id) DROP CONSTRAINT order_index" />
+    <sql-case id="alter_table_rename_constraint" value="ALTER TABLE t_order RENAME CONSTRAINT order_index_bak TO order_index" />
 
-    <sql-case id="alter_index" value="ALTER INDEX idx_order_id REBUILD PARALLEL" />
+    <sql-case id="alter_index" value="ALTER INDEX order_index REBUILD PARALLEL" />
     <sql-case id="alter_index_with_space" value="    ALTER INDEX
-        idx_order_id
+        order_index
     REBUILD PARALLEL    " />
-    <sql-case id="alter_index_with_quota" value="ALTER INDEX &quot;idx_order_id&quot; REBUILD PARALLEL" />
+    <sql-case id="alter_index_with_quota" value="ALTER INDEX &quot;order_index&quot; REBUILD PARALLEL" />
     
     <!--  
-    <sql-case id="alter_index_rename" value="ALTER INDEX idx_order_id_bak RENAME TO idx_order_id" />
+    <sql-case id="alter_index_rename" value="ALTER INDEX order_index_bak RENAME TO order_index" />
     -->
 </sql-cases>
